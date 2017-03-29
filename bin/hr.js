@@ -1,12 +1,12 @@
-/**
- *
- * hr.js 文件作用
- * @author hurong<353486474@QQ.COM>
- * @date 2017/3/29
- *
- * @内容 作用
- * @内容 作用
- */
+// /**
+//  *
+//  * hr.js 文件作用
+//  * @author hurong<353486474@QQ.COM>
+//  * @date 2017/3/29
+//  *
+//  * @内容 作用
+//  * @内容 作用
+//  */
 const download=require('download-git-repo')//提供github下载功能
 const chalk=require('chalk')//提供命令行颜色提示
 const ora=require('ora')//异步控制台进度条
