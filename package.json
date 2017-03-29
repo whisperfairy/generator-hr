@@ -4,7 +4,7 @@
   "license": "MIT",
   "preferGlobal": true,
   "bin": {
-    "hr": "bin/hr"
+    "hr": "bin/hr.js"
   },
   "description": "react template for CEC build by hr",
   "repository": {
