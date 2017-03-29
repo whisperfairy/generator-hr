@@ -2,8 +2,9 @@
   "name": "generator-hr",
   "version": "1.0.0",
   "license": "MIT",
+  "preferGlobal": true,
   "bin":{
-    "hr":"hr"
+    "hr":"bin/hr"
   },
   "description": "react template for CEC build by hr",
   "repository": {
