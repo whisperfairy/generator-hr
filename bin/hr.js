@@ -1,16 +1,7 @@
-// /**
-//  *
-//  * hr.js 文件作用
-//  * @author hurong<353486474@QQ.COM>
-//  * @date 2017/3/29
-//  *
-//  * @内容 作用
-//  * @内容 作用
-//  */
-const download=require('download-git-repo')//提供github下载功能
-const chalk=require('chalk')//提供命令行颜色提示
-const ora=require('ora')//异步控制台进度条
-const tildify=require('tildify')//linux/mac下绝对路径简化
+const download=require('download-git-repo')
+const chalk=require('chalk')
+const ora=require('ora')
+const tildify=require('tildify')
 const cwd =tildify(process.cwd());
 const logger = require('../lib/logger');
 var program = require('commander')
@@ -42,9 +33,3 @@ break;
         initReactWebTemplate('whisperfairy/react-starter-hr')
     }
 }
-
-
-// download('flipxfx/download-git-repo-fixture', 'test/tmp', function(err) {
-//     if (err) return done(err);
-//     done();
-// });
