@@ -5,6 +5,15 @@
   "bin":{
     "hr":"hr"
   },
+  "description": "react template for CEC build by hr",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whisperfairy/generator-hr"
+  },
+  "keywords": [
+    "cec",
+    "ncse"
+  ],
   "author":"hurong",
   "dependencies": {
     "chalk": "^1.1.3",
