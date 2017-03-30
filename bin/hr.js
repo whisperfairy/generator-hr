@@ -23,7 +23,7 @@ program
     .version('0.0.1')
     .option('-i, --install [ProjectType]', 'install [项目类型]',/^(web|electron|hybrid)$/i,'web')
     .parse(process.argv);
-
+if (program.install){
 switch (program.install)
 {
     case 'web':{
@@ -33,4 +33,5 @@ break;
     default :{
         initReactWebTemplate('whisperfairy/react-starter-hr')
     }
+}
 }
