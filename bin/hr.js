@@ -1,37 +1,46 @@
 #!/usr/bin/env node
-const download=require('download-git-repo')
-const chalk=require('chalk')
-const ora=require('ora')
+const program = require('commander');
+const download= require('download-git-repo')
+const path = require('path')
+const ora = require('ora')
 const tildify=require('tildify')
-const cwd =tildify(process.cwd());
 const logger = require('../lib/logger');
-var program = require('commander')
-const done = (err)=>{
-    console.log(`finish ${err}`)
-}
-const initReactWebTemplate=(template)=>{
+let defaultProjectName = 'react-starter-hr';
+const initReactWebTemplate = (template) => {
     var spinner = ora('downloading template')
     spinner.start()
-    download(template, cwd, { clone: false }, function (err) {
+    download(template,path.resolve(process.cwd(),defaultProjectName), { clone: false }, function (err) {
         spinner.stop()
         if (err)
             logger.fatal('Failed to download repo ' + template + ': ' + err.message.trim())
     })
+
 }
-console.log('HR-React-starter');
 program
     .version('0.0.1')
-    .option('-i, --install [ProjectType]', 'install [项目类型]',/^(web|electron|hybrid)$/i,'web')
+    .usage('init [project-name]')
+    .option('-t, --Type [ProjectType]', 'install [项目类型]', /^(web|electron|hybrid)$/i, 'web')
     .parse(process.argv);
-if (program.install){
-switch (program.install)
-{
-    case 'web':{
-        initReactWebTemplate('whisperfairy/react-starter-hr')
-break;
+switch (program.args[0]) {
+    case 'init': {
+        if (program.args[1]) {
+            defaultProjectName = program.args[1];
+            console.log(path.resolve(process.cwd(),defaultProjectName));
+        }
+        if (program.Type) {
+            switch (program.Type) {
+                case 'web': {
+                    initReactWebTemplate('whisperfairy/react-starter-hr')
+                    break;
+                }
+                default : {
+                    console.log('hello world')
+                }
+            }
+        }
+        break;
     }
     default :{
-        initReactWebTemplate('whisperfairy/react-starter-hr')
+        program.help()
     }
-}
 }
