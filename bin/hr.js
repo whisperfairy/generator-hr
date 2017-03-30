@@ -5,7 +5,7 @@ const path = require('path')
 const ora = require('ora')
 const tildify=require('tildify')
 const logger = require('../lib/logger');
-let defaultProjectName = 'react-starter-hr';
+let defaultProjectName = '';
 const initReactWebTemplate = (template) => {
     var spinner = ora('downloading template')
     spinner.start()
